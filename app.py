@@ -208,12 +208,11 @@ def main():
         # Extract text from resume
         resume_text = extract_text_from_resume(uploaded_file)
 
-        st.write("Columns in df:", df.columns)
-        st.write(df.head())
+        
         # Preprocess the resume text
         cleaned_resume = preprocess_text(resume_text)
         vectorizer = TfidfVectorizer()
-        vectorizer.fit(df['cleaned_resume'])
+        vectorizer.fit(df['Resume'])
 
         # Transform the resume text using the fitted vectorizer
         resume_vector = vectorizer.transform([cleaned_resume])
