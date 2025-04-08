@@ -19,6 +19,17 @@ import io
 from PyPDF2 import PdfReader
 import docx2txt
 
+
+import nltk
+from nltk.corpus import stopwords
+
+# Try to load stopwords, download if missing
+try:
+    stop_words = set(stopwords.words('english'))
+except:
+    nltk.download('stopwords')
+    stop_words = set(stopwords.words('english'))
+
 # Download NLTK resources
 nltk.download('punkt', download_dir='nltk_data')
 nltk.download('stopwords', download_dir='nltk_data')
