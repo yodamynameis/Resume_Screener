@@ -142,8 +142,7 @@ def main():
         model = pickle.load(open(model_file, 'rb'))
         vectorizer = pickle.load(open(vectorizer_file, 'rb'))
         encoder = pickle.load(open(encoder_file, 'rb'))
-        
-         _ = vectorizer.transform(["test"])
+        _ = vectorizer.transform(["test"])
         st.success("✅ Loaded pre-trained model.")
         
     except (FileNotFoundError, NotFittedError, AttributeError):
