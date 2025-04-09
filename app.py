@@ -211,8 +211,8 @@ def main():
         
         # Preprocess the resume text
         cleaned_resume = preprocess_text(resume_text)
-        vectorizer = TfidfVectorizer()
-        vectorizer.fit(df['cleaned_resume'])
+        #vectorizer = TfidfVectorizer()
+        #vectorizer.fit(df['cleaned_resume'])
 
         # Transform the resume text using the fitted vectorizer
         resume_vector = vectorizer.transform([cleaned_resume])
