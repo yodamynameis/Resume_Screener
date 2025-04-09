@@ -92,12 +92,16 @@ This app uses the [Updated Resume Dataset](https://www.kaggle.com/datasets/gaura
 ## 📷 Screenshot
 
 Below are the sample screenshot of the Resume Screening App:
+***
 
-![Resume Screening App Screenshot](ss1.png)***
+![Resume Screening App Screenshot](ss1.png)
+***
 
-![Resume Screening App Screenshot](ss2.png)***
+![Resume Screening App Screenshot](ss2.png)
+***
 
-![Resume Screening App Screenshot](ss3.png)***
+![Resume Screening App Screenshot](ss3.png)
+***
 
     
 ## 📌 Note
