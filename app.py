@@ -135,6 +135,7 @@ def main():
     model_file = 'resume_classifier_model.pkl'
     vectorizer_file = 'tfidf_vectorizer.pkl'
     encoder_file = 'label_encoder.pkl'
+    from sklearn.exceptions import NotFittedError
     
     try:
         # Try to load the model and related components
@@ -142,10 +143,11 @@ def main():
         vectorizer = pickle.load(open(vectorizer_file, 'rb'))
         encoder = pickle.load(open(encoder_file, 'rb'))
         
+         _ = vectorizer.transform(["test"])
         st.success("✅ Loaded pre-trained model.")
         
-    except FileNotFoundError:
-        st.write("⌛ Training new model...")
+    except (FileNotFoundError, NotFittedError, AttributeError):
+        st.warning("⚠️ Model or vectorizer not found or not fitted. Training a new model...")
         
         # Preprocess the data
         df['cleaned_resume'] = df['Resume'].apply(preprocess_text)
@@ -165,16 +167,19 @@ def main():
         # Train the model (Multinomial Naive Bayes)
         model = OneVsRestClassifier(MultinomialNB())
         model.fit(X_train, y_train)
+
+          # Save everything
+        pickle.dump(model, open(model_file, 'wb'))
+        pickle.dump(vectorizer, open(vectorizer_file, 'wb'))
+        pickle.dump(encoder, open(encoder_file, 'wb'))
+
+        st.success("✅ Model trained and saved!")
         
         # Evaluate the model
         y_pred = model.predict(X_test)
         accuracy = accuracy_score(y_test, y_pred)
         st.write(f"📊 Model accuracy: **{accuracy:.2f}**")
         
-        # Save the model and related components
-        pickle.dump(model, open(model_file, 'wb'))
-        pickle.dump(vectorizer, open(vectorizer_file, 'wb'))
-        pickle.dump(encoder, open(encoder_file, 'wb'))
     
     # Dictionary of skills for each job category
     category_skills = {
