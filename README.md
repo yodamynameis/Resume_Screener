@@ -43,7 +43,7 @@ This app uses the [Updated Resume Dataset](https://www.kaggle.com/datasets/gaura
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/yourusername/resume-screening-app.git
+   git clone https://github.com/yodamynameis/resume-screening-app.git
    cd resume-screening-app
 2. **Install Dependencies It is recommended to use a virtual environment.**
     ```bash
