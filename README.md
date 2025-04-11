@@ -1,10 +1,13 @@
 # 💼 Resume Screening and Job Role Predictor
 
+[Resume Screener](https://resume-screener-webe.onrender.com/)
 A Streamlit web application that uses Natural Language Processing (NLP) and Machine Learning to:
 - Analyze resumes (PDF/DOCX/TXT format)
 - Predict the most suitable job role
 - Provide personalized feedback based on required vs. present skills
 - Suggest improvements for resume quality and content
+#### NOTE: 
+Only works for tech/IT jobs as the training dataset was predominently of IT sector 
 
 ---
 
