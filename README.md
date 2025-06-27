@@ -38,7 +38,7 @@ Only works for tech/IT jobs as the training dataset was predominently of IT sect
 ## 📁 Dataset
 
 This app uses the [Updated Resume Dataset](https://www.kaggle.com/datasets/gauravduttakiit/resume-dataset) from Kaggle.  
-> Make sure to download and place `UpdatedResumeDataSet.csv` in the root directory of the project.
+> Make sure to download and place `UpdatedResumeDataSet.csv` in the root directory of the project
 
 ---
 
